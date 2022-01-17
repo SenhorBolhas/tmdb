@@ -1,13 +1,16 @@
 /* eslint-disable */
-export let FAVORITE_MOVIES = localStorage.getItem("favorite") !== null 
-&& localStorage.getItem("favorite") !== undefined 
-? localStorage.getItem("favorite") : null;
+export let FAVORITE_MOVIES = [];
+
+FAVORITE_MOVIES = localStorage.getItem("favorite") !== null && localStorage.getItem("favorite") !== undefined  && localStorage.getItem("favorite").length > 0 
+? localStorage.getItem("favorite") : [];
 
 export function addFAVORITE(favorite) {
+    console.log(FAVORITE_MOVIES);
     if(!FAVORITE_MOVIES.includes(favorite)){
-        FAVORITE_MOVIES.push(favorite); 
+        FAVORITE_MOVIES =+ (favorite); 
         localStorage.setItem("favorite", FAVORITE_MOVIES); 
     }
+    console.log(FAVORITE_MOVIES, FAVORITE_MOVIES.length);
 };
 
 export function removeFAVORITE(favorite) {
@@ -19,4 +22,8 @@ export function removeFAVORITE(favorite) {
         }
             localStorage.setItem("favorite", FAVORITE_MOVIES); 
     }
+}
+
+export function includesFAVORITE(favorite) {
+    FAVORITE_MOVIES.includes(favorite);
 }

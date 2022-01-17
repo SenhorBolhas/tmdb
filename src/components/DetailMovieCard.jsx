@@ -6,6 +6,7 @@ import Modal from './Modal';
 import { URL_IMAGEM, URL_BACKGROUND } from "../const";
 import TMDBlogo from "../images/movie_logo.svg";
 import { LANGUAGE } from "../language";
+import { includesFAVORITE, addFAVORITE, removeFAVORITE, FAVORITE_MOVIES } from "../favoriteMovies";
 
 const Image = styled.img`
 	width: 100%;
@@ -36,9 +37,11 @@ class DetailMovieCard extends Component {
 			release_date,
 			budget,
 			revenue,
-			runtime
+			runtime,
+			id
 		} = this.props.movie;
 		
+		console.log(this.props.movie);
 		let modalID ;
 		if(typeof this.props.movie.id !== "undefined"){
 			modalID = <Modal modal={this.props.movie.id} />	
@@ -68,7 +71,12 @@ class DetailMovieCard extends Component {
 							{modalID}
 							</li>
 							<li className="row-m-4">
-							{LANGUAGE === "pt-BR" ? "Favoritar: " : "Fav: "}
+
+								{ FAVORITE_MOVIES !== null && includesFAVORITE(this.props.movie.id)
+								? <Glyphicon className="green item-Glyph" glyph="star" onClick={() => {removeFAVORITE(id);}}/>
+								:  <Glyphicon className="green item-Glyph" glyph="star-empty" onClick={() =>{addFAVORITE(id);}} />
+							}
+							{LANGUAGE === "pt-BR" ? "Favoritar " : "Fav "}
 							</li>
 						 </ul>
 					<span className="movie-tagline"> {tagline} </span>

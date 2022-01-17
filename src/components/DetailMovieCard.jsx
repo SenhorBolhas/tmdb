@@ -67,6 +67,9 @@ class DetailMovieCard extends Component {
 							<li className="row-m-4">
 							{modalID}
 							</li>
+							<li className="row-m-4">
+							{LANGUAGE === "pt-BR" ? "Favoritar: " : "Fav: "}
+							</li>
 						 </ul>
 					<span className="movie-tagline"> {tagline} </span>
 					<p className="movie-overview">{overview} </p>

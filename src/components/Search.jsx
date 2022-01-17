@@ -6,6 +6,7 @@ import Autosuggest from 'react-autosuggest'
 import { Link } from 'react-router-dom'
 import { Navbar } from 'react-bootstrap/lib'
 import TMDBlogo from "../images/movie_logo.svg";
+import TMDBlogoBrand from "../images/tmdb.svg";
 import BRflag from "../images/br.svg";
 import USAflag from "../images/usa.svg";
 import { URL_SEARCH, API_KEY_ALT , IMAGEM_PEQUENA} from '../const';
@@ -126,7 +127,7 @@ class Search extends Component {
           <Navbar.Brand>
             <a href="#">
             <Brand />
-              <Image alt = " " src={TMDBlogo}/>
+              <Image alt = " " src={TMDBlogoBrand}/>
             </a>
           </Navbar.Brand>
         </Navbar.Header>

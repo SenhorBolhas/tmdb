@@ -14,15 +14,19 @@ padding-right: 10px;
 overflow: hidden;
 display: inline-block;
 background-color: #fff;
- text-decoration: none;`;
+text-decoration: none;`;
 
 
 const MovieCard = (props) => (
       <Col xs={12} sm={12} md={6} lg={6}> 
-      <Wrapper to= {`/movie/${props.movie.id}`}>
+      <Wrapper 
+      to= {`/movie/${props.movie.id}`}
+      style= {{borderBottom: '2px solid #111111', borderLeft: '1px solid #262626'}}
+      >        
         <img className="card-image" alt={`${props.movie.title} Movie Poster`} src={`https://image.tmdb.org/t/p/w500/${props.movie.poster_path}`} />
         <div className="card-details">
         <h3>{props.movie.title}</h3>
+        <div className="underline"/>
         <p className="text-ellipsis"> {props.movie.overview} </p>
         </div>
       </Wrapper>

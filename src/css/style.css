@@ -31,13 +31,13 @@ body {
 .navbar {
   background: none;
   border-color:transparent;
-  border-bottom: 0.5px solid #00FC87;
+  border-bottom: 0.5px solid rgba(80,194,191,1);
   padding-top: 2em;
   padding-bottom: 1em;
 }
 .navbar-form {border-top: transparent ; border-bottom: transparent}
 #outer-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.85) 15%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 1) 100%);
+    background: rgb(36, 33, 33);
     background-attachment: fixed;
     margin: 0;
     overflow-x:hidden;
@@ -87,7 +87,7 @@ margin-bottom: 1.5rem;
 
 .meta-data {
   display: block;
-  color: #00FC87;
+  color: linear-gradient(90deg, rgba(4,180,228,1) 0%, rgba(80,194,191,1) 50%, rgba(106,197,180,1) 100%);
   font-size: 1.6em;
   line-height: 1.1em;
 }
@@ -95,13 +95,20 @@ margin-bottom: 1.5rem;
   width: 46%;
    float: left;
    height: auto;
+   position: relative;
+ }
+
+ .underline {
+  padding-top: 5%;
+  border-bottom: 2px solid #d6d6d6;
+  position: initial;
  }
 
   .card-details{
    display: block;
    float: right;
    width: 52%;
-   text-align: left;
+   text-align: center;
 
  }
 
@@ -110,6 +117,11 @@ margin-bottom: 1.5rem;
    margin-bottom: 5px;
    font-weight: bold;
    text-transform: uppercase;
+   color: #000;
+ }
+
+ .card-details > h3:hover {
+  color: #04b4e4
  }
 
  .text-ellipsis {
@@ -151,7 +163,7 @@ list-style-type: none;
 
 .movie-metadata {
     display: block;
-    color: #00FC87;
+    color: rgba(80,194,191,1);
     font-size: 20px;
     font-family: lato;
 }
